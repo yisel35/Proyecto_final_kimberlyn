@@ -62,4 +62,7 @@ Este es un proyecto de blog web creado con el framework Django, que incluye func
 
 - Python 3.x
 - Django (Versión compatible con el proyecto)
-http://127.0.0.1:8000/ 
+http://127.0.0.1:8000/
+
+## video de la pagina 
+https://youtu.be/UsetysZ8E00 
