@@ -1,0 +1,22 @@
+{% extends "blog/home.html" %}
+
+{% block contenidoQueCambia %}
+<!-- Contenido específico de la vista de publicaciones -->
+<section id="post-list">
+    <div class="container px-5">
+        <div class="row gx-5">
+            {% for post in posts %}
+                <div class="col-lg-4">
+                    <div class="p-5">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.content|slice:":200" }}...</p>
+                        <a href="{% url 'post_detail' post.id %}">Leer más</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No hay publicaciones disponibles.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

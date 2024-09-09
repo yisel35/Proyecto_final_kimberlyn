@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "blog/home.html" %}
+    {% block contenidoQueCambia %}
+</head>
+<body>
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Iniciar Sesión</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Por favor, ingresa tus credenciales para iniciar sesión.</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-50">
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+        
+        <!-- Mostrar mensajes de error -->
+        {% if msg_login %}
+            <p class="alert alert-danger">{{ msg_login }}</p>
+        {% endif %}
+    </div>
+   
+</body>
+</html>
+{% endblock %}
